@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Metronome with Trainer</title>
 </head>
+
 <body>
-  
+  <div id="app">
+    <nav class="deep-purple accent-4">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo">Metronome with Trainer</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="row">
+        <div id="animation" class="card valign-wrapper center">
+          <span>Animation</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="beats" class="card valign-wrapper center">
+          <span>Beats</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div id="measurement" class="card">
+          <div id="time-signature" class="col s6 valign-wrapper center">
+            <span>Time Signature</span>
+          </div>
+          <div id="subdivision" class="col s6 valign-wrapper center">
+            <span>Subdivision</span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div id="controls" class="card valign-wrapper center">
+          <span>Controls</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>

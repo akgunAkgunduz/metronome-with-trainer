@@ -1,0 +1,9 @@
+.row {
+  margin-bottom: 0;
+}
+.row div {
+  height: 100px;
+}
+.row div > span {
+  margin: 0 auto;
+}
