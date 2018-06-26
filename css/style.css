@@ -7,3 +7,12 @@
 .row div > span {
   margin: 0 auto;
 }
+
+#trainer {
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+#trainer input {
+  width: 50px;
+}
