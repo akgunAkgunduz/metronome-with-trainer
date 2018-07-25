@@ -38,8 +38,14 @@ let metronome =  {
     let t1 = performance.now()
     this.setClickCount(this.getClickCount() + 1)
 
-    if ((this.getClickCount() % trainer.period === 0) && (this.getTempo() < trainer.limit) && (trainer.breakCounter == 0)) {
-      this.setTempo(this.getTempo() + trainer.increment)
+    if (trainer.break == 0) {
+      if ((this.getClickCount() % trainer.period === 0) && (this.getTempo() < trainer.limit) && (trainer.breakCounter == 0)) {
+        this.setTempo(this.getTempo() + trainer.increment)
+      }
+    } else {
+      if ((this.getClickCount() % trainer.period === 0) && (this.getTempo() < trainer.limit) && (trainer.breakCounter == trainer.break)) {
+        this.setTempo(this.getTempo() + trainer.increment)
+      }
     }
 
     this.timer = setTimeout(() => {
@@ -56,7 +62,7 @@ let trainer = {
   active: true,
   preCount: false,
   period: 4,
-  break: 0,
+  break: 2,
   breakCounter: 0,
   isOnBreak: false,
   increment: 10,
