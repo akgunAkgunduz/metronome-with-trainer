@@ -1,6 +1,7 @@
 let metronome =  {
-  tempo: 60,
+  active: false,
   sound: audio,
+  tempo: 60,
   clickCount: 0,
   timer: null,
   getTempo() {
@@ -35,6 +36,7 @@ let metronome =  {
     }
 
     audio.play()
+    this.active = true
     let t1 = performance.now()
     this.setClickCount(this.getClickCount() + 1)
 
@@ -55,6 +57,8 @@ let metronome =  {
   },
   stop() {
     clearInterval(this.timer)
+    trainer.breakCounter = 0
+    this.active = false
   }
 }
 
@@ -65,10 +69,34 @@ let trainer = {
   break: 2,
   breakCounter: 0,
   isOnBreak: false,
-  increment: 10,
-  limit: 120
+  increment: 1,
+  limit: 280
 }
 
 document.addEventListener('DOMContentLoaded', function() {
+  const stop = document.getElementById('stop')
+
   M.AutoInit()
+
+  bpm.addEventListener('input', (e) => {
+    metronome.setTempo(e.target.value)
+    bpmRange.value = e.target.value
+  })
+
+  bpmRange.addEventListener('input', (e) => {
+    metronome.setTempo(e.target.value)
+    bpm.value = e.target.value
+  })
+
+  start.addEventListener('click', () => {
+    metronome.tick()
+    start.classList.toggle('hide')
+    stop.classList.toggle('hide')   
+  })
+
+  stop.addEventListener('click', () => {
+    metronome.stop()
+    start.classList.toggle('hide')
+    stop.classList.toggle('hide')   
+  })
 })

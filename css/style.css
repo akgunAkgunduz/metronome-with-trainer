@@ -1,18 +1,30 @@
-.row {
-  margin-bottom: 0;
+input[type="number"] {
+  width: 50px !important;
+  text-align: center;
 }
-.row div {
-  height: 80px;
+
+.card {
+  padding: 1rem;
 }
-.row div > span {
+
+#bpmDiv {
+  text-align: center;
+}
+
+#bpmRangeDiv {
+  display: block;
+  width: 100%;
+}
+
+#startStopDiv {
+  display: block;
+  width: 40px;
   margin: 0 auto;
+}
+#startStop {
+  display: block;
 }
 
 #trainer {
   text-align: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-#trainer input {
-  width: 50px;
 }

@@ -32,49 +32,49 @@
       <li><a href="#">User</a></li>
     </ul>
 
-    <div class="container">      
-      <div class="card">
-        <div id="bpmDiv">
-          <input id="bpm" type="number" value="60" min="20" max="280">BPM
+    <div class="container">
+      <div class="row">
+        <div id="animation" class="card valign-wrapper center">
+          <span>Animation</span>
         </div>
       </div>
-      
-      <div id="bpm-controls" class="card">
-        <div id="bpmRangeDiv">
-          <p class="range-field">
-            <input type="range" id="bpmRange" value="60" min="20" max="280" />
-          </p>
+
+      <div class="row">
+        <div id="beats" class="card valign-wrapper center">
+          <span>Beats</span>
         </div>
-      </div>    
-      
-      <div class="card">
-        <div id="startStopDiv">
-          <div id="start" class="btn-floating waves-effect waves-light red"><i class="material-icons">play_arrow</i></div>
-          <div id="stop" class="btn-floating waves-effect waves-light grey hide"><i class="material-icons">stop</i></div>
-        </div>          
       </div>
 
-      <div class="card">
-        <div style="height: 2rem;">
-          <div class="left">
-            <strong>Trainer</strong>
+      <div class="row">
+        <div id="measurement" class="card">
+          <div id="time-signature" class="col s6 valign-wrapper center">
+            <span>Time Signature</span>
           </div>
-          <div class="switch right">
-            <label>
-              Off
-              <input type="checkbox">
-              <span class="lever"></span>
-              On
-            </label>
+          <div id="subdivision" class="col s6 valign-wrapper center">
+            <span>Subdivision</span>
           </div>
         </div>
+      </div>
 
-        <div id="trainer">
-          Increase tempo by <input type="number" value="1" min="0"> BPM
-          every <input type="number" value="4" min="1"> clicks 
-          until tempo is <input type="number" value="280" min="20" max="280"> BPM
+      <div class="row">
+        <div id="bpm-controls" class="card valign-wrapper center">
+          <span>BPM controls</span>
         </div>
-      </div>      
+      </div>
+
+      <div class="row">
+        <div id="controls" class="card valign-wrapper center">
+          <span class="btn waves-effect waves-light deep-purple">Tap Tempo</span>
+          <span class="btn-floating waves-effect waves-light red"><i class="material-icons">play_arrow</i></span>
+          <span class="btn waves-effect waves-light deep-purple">Trainer</span>
+        </div>
+      </div>
+      <div id="trainer" class="z-depth-1">
+        Increase tempo by <div class="input-field inline"><input type="number"></div> BPM 
+        every <div class="input-field inline"><input type="number"></div> seconds
+        until tempo is <div class="input-field inline"><input type="number"></div> BPM
+      </div>
+      
     </div>
   </div>
 
