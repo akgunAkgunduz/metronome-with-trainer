@@ -42,7 +42,7 @@
       <div id="bpm-controls" class="card">
         <div id="bpmRangeDiv">
           <p class="range-field">
-            <input type="range" id="bpmRange" value="60" min="20" max="280" />
+            <input type="range" id="bpmRange" value="60" min="20" max="280" step="1"/>
           </p>
         </div>
       </div>    
@@ -52,6 +52,14 @@
           <div id="start" class="btn-floating waves-effect waves-light red"><i class="material-icons">play_arrow</i></div>
           <div id="stop" class="btn-floating waves-effect waves-light grey hide"><i class="material-icons">stop</i></div>
         </div>          
+      </div>
+
+      <div class="card">
+        <div id="counters">
+          <span>Clicks: </span><span id="clickCounter">0</span>
+          <br>
+          <span>Break: </span><span id="breakCounter">0</span>
+        </div>
       </div>
 
       <div class="card">
