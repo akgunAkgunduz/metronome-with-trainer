@@ -4,6 +4,10 @@ const start = document.getElementById('start')
 const stop = document.getElementById('stop')
 const clickCounter = document.getElementById('clickCounter')
 const breakCounter = document.getElementById('breakCounter')
+const increment = document.getElementById('increment')
+const period = document.getElementById('period')
+const limit = document.getElementById('limit')
+const tBreak = document.getElementById('tBreak')
 
 let metronome =  {
   isActive: false,
@@ -70,8 +74,8 @@ let metronome =  {
 let trainer = {
   isActive: true,
   preCount: false,
-  period: 8,
-  break: 4,
+  period: 16,
+  break: 0,
   breakCounter: 0,
   isOnBreak: false,
   increment: 1,
@@ -117,5 +121,21 @@ document.addEventListener('DOMContentLoaded', function() {
     metronome.stop()
     start.classList.toggle('hide')
     stop.classList.toggle('hide')   
+  })
+
+  increment.addEventListener('input', () => {
+    trainer.increment = parseInt(increment.value)
+  })
+
+  period.addEventListener('input', () => {
+    trainer.period = parseInt(period.value)
+  })
+
+  limit.addEventListener('input', () => {
+    trainer.limit = parseInt(limit.value)
+  })
+
+  tBreak.addEventListener('input', () => {
+    trainer.break = parseInt(tBreak.value)
   })
 })

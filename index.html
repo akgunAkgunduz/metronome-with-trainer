@@ -78,9 +78,11 @@
         </div>
 
         <div id="trainer">
-          Increase tempo by <input type="number" value="1" min="0"> BPM
-          every <input type="number" value="4" min="1"> clicks 
-          until tempo is <input type="number" value="280" min="20" max="280"> BPM
+          Increase tempo by <input type="number" id="increment" value="1" min="0"> BPM
+          every <input type="number" id="period" value="16" min="1"> clicks 
+          until tempo is <input type="number" id="limit" value="280" min="20" max="280"> BPM
+          <br>
+          Give breaks of <input type="number" id="tBreak" value="0" min="0" max="16"> between each period
         </div>
       </div>      
     </div>
