@@ -51,11 +51,19 @@ let metronome =  {
 
     if (trainer.break == 0) {
       if ((this.getClickCount() % trainer.period === 0) && (this.getTempo() < trainer.limit) && (trainer.breakCounter == 0)) {
-        this.setTempo(this.getTempo() + trainer.increment)
+        if (this.getTempo() + trainer.increment > trainer.limit) {
+          this.setTempo(trainer.limit)
+        } else {
+          this.setTempo(this.getTempo() + trainer.increment)
+        }
       }
     } else {
       if ((this.getClickCount() % trainer.period === 0) && (this.getTempo() < trainer.limit) && (trainer.breakCounter == trainer.break)) {
-        this.setTempo(this.getTempo() + trainer.increment)
+        if (this.getTempo() + trainer.increment > trainer.limit) {
+          this.setTempo(trainer.limit)
+        } else {
+          this.setTempo(this.getTempo() + trainer.increment)
+        }
       }
     }
 
