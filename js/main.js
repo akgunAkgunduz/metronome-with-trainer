@@ -13,6 +13,8 @@ let metronome =  {
   isActive: false,
   sound: audio,
   tempo: 60,
+  minTempo: 20,
+  maxTempo: 300,
   clickCount: 0,
   timer: null,
   getTempo() {
@@ -84,6 +86,19 @@ let trainer = {
 
 let view = {
   clickCount: 0,
+  init() {
+    bpm.value = metronome.tempo
+    bpm.min = metronome.minTempo
+    bpm.max = metronome.maxTempo
+
+    bpmRange.value = metronome.tempo
+    bpmRange.min = metronome.minTempo
+    bpmRange.max = metronome.maxTempo
+
+    limit.value = metronome.maxTempo
+    limit.min = metronome.minTempo + 1
+    limit.max = metronome.maxTempo
+  },
   update() {
     bpm.value = metronome.getTempo()
     bpmRange.value = metronome.getTempo()
@@ -99,6 +114,7 @@ let view = {
 
 document.addEventListener('DOMContentLoaded', function() {
   M.AutoInit()
+  view.init()
 
   bpm.addEventListener('input', () => {
     metronome.setTempo(parseInt(bpm.value))

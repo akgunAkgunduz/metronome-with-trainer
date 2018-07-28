@@ -35,14 +35,14 @@
     <div class="container">      
       <div class="card">
         <div id="bpmDiv">
-          <input id="bpm" type="number" value="60" min="20" max="280">BPM
+          <input id="bpm" type="number">BPM
         </div>
       </div>
       
       <div id="bpm-controls" class="card">
         <div id="bpmRangeDiv">
           <p class="range-field">
-            <input type="range" id="bpmRange" value="60" min="20" max="280" step="1"/>
+            <input type="range" id="bpmRange" step="1"/>
           </p>
         </div>
       </div>    
@@ -80,7 +80,7 @@
         <div id="trainer">
           Increase tempo by <input type="number" id="increment" value="1" min="0"> BPM
           every <input type="number" id="period" value="16" min="1"> clicks 
-          until tempo is <input type="number" id="limit" value="280" min="20" max="280"> BPM
+          until tempo is <input type="number" id="limit" value="300" min="20" max="300"> BPM
           <br>
           Give breaks of <input type="number" id="tBreak" value="0" min="0" max="16"> between each period
         </div>
