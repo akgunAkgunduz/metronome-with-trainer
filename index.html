@@ -15,7 +15,7 @@
 <body>
   <div id="app">
     <audio id="audio" src="wav/beat.wav"></audio>
-    <nav class="deep-purple accent-4">
+    <nav class="indigo darken-4">
       <div class="nav-wrapper container">
         <a href="#" class="brand-logo">Metronome</a>
         <a href="#" class="sidenav-trigger" data-target="mobile-nav"><i class="material-icons">menu</i></a>
@@ -40,13 +40,33 @@
         </div>
       </div>
       
-      <div id="bpm-controls" class="card">
+      <div class="card">
         <div id="bpmRangeDiv">
           <p class="range-field">
             <input type="range" id="bpmRange" step="1"/>
           </p>
         </div>
-      </div>    
+      </div>
+
+      <div class="card">
+        <div id="controls">
+          <button id="minusFive" class="control btn waves-effect waves-light indigo darken-4">-5</button>
+
+          <button id="minusOne" class="control btn waves-effect waves-light indigo darken-4">
+            <i class="material-icons">remove</i>
+          </button>
+
+          <div id="tempoDisplay" class="z-depth-2 valign-wrapper red white-text">
+            60
+          </div>
+
+          <button id="plusOne" class="control btn waves-effect waves-light indigo darken-4">
+            <i class="material-icons">add</i>
+          </button>
+
+          <button id="plusFive" class="control btn waves-effect waves-light indigo darken-4">+5</button>
+        </div>
+      </div>
       
       <div class="card">
         <div id="startStopDiv">

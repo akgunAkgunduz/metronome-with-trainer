@@ -12,7 +12,7 @@ const tBreak = document.getElementById('tBreak')
 let metronome =  {
   isActive: false,
   sound: audio,
-  tempo: 60,
+  tempo: 100,
   minTempo: 20,
   maxTempo: 300,
   clickCount: 0,
@@ -106,10 +106,13 @@ let view = {
     limit.value = metronome.maxTempo
     limit.min = metronome.minTempo + 1
     limit.max = metronome.maxTempo
+
+    tempoDisplay.innerText = metronome.tempo
   },
   update() {
     bpm.value = metronome.getTempo()
     bpmRange.value = metronome.getTempo()
+    tempoDisplay.innerText = metronome.getTempo()
 
     view.clickCount = metronome.clickCount % trainer.period
     if (view.clickCount == 0 && metronome.isActive) {
@@ -127,12 +130,13 @@ document.addEventListener('DOMContentLoaded', function() {
   bpm.addEventListener('input', () => {
     metronome.setTempo(parseInt(bpm.value))
     bpmRange.value = metronome.getTempo()
+    view.update()
   })
 
   bpmRange.addEventListener('input', () => {
     metronome.setTempo(parseInt(bpmRange.value))
-    console.log(metronome.getTempo())
     bpm.value = metronome.getTempo()
+    view.update()
   })
 
   start.addEventListener('click', () => {
@@ -161,5 +165,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
   tBreak.addEventListener('input', () => {
     trainer.break = parseInt(tBreak.value)
+  })
+
+  plusOne.addEventListener('click', () => {
+    metronome.setTempo(metronome.getTempo() + 1)
+    bpm.value = metronome.getTempo()
+    bpmRange.value = metronome.getTempo()
+    view.update()
+  })
+
+  plusFive.addEventListener('click', () => {
+    metronome.setTempo(metronome.getTempo() + 5)
+    bpm.value = metronome.getTempo()
+    bpmRange.value = metronome.getTempo()
+    view.update()
+  })
+
+  minusOne.addEventListener('click', () => {
+    metronome.setTempo(metronome.getTempo() - 1)
+    bpm.value = metronome.getTempo()
+    bpmRange.value = metronome.getTempo()
+    view.update()
+  })
+
+  minusFive.addEventListener('click', () => {
+    metronome.setTempo(metronome.getTempo() - 5)
+    bpm.value = metronome.getTempo()
+    bpmRange.value = metronome.getTempo()
+    view.update()
   })
 })

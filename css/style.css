@@ -32,3 +32,18 @@ input[type="number"] {
 #counters {
   text-align: center;
 }
+
+#controls {
+  text-align: center;
+}
+
+.control {
+  
+}
+
+#tempoDisplay {
+  display: inline-block;
+  line-height: 33px;
+  height: 36px;
+  width: 80px;
+}
