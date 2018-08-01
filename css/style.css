@@ -37,10 +37,6 @@ input[type="number"] {
   text-align: center;
 }
 
-.control {
-  
-}
-
 #tempoDisplay {
   display: inline-block;
   line-height: 33px;
