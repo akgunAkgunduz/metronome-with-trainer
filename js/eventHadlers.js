@@ -50,28 +50,40 @@ tBreak.addEventListener('input', () => {
 })
 
 plusOne.addEventListener('click', () => {
-  metronome.setTempo(metronome.getTempo() + 1)
-  bpm.value = metronome.getTempo()
-  bpmRange.value = metronome.getTempo()
-  view.update()
+  if (metronome.getTempo() < metronome.maxTempo) {
+    metronome.setTempo(metronome.getTempo() + 1)
+    bpm.value = metronome.getTempo()
+    bpmRange.value = metronome.getTempo()
+    view.update()
+  }
 })
 
 plusFive.addEventListener('click', () => {
-  metronome.setTempo(metronome.getTempo() + 5)
+  if (metronome.getTempo() < metronome.maxTempo - 5) {
+    metronome.setTempo(metronome.getTempo() + 5)
+  } else {
+    metronome.setTempo(metronome.maxTempo)
+  }
   bpm.value = metronome.getTempo()
   bpmRange.value = metronome.getTempo()
   view.update()
 })
 
 minusOne.addEventListener('click', () => {
-  metronome.setTempo(metronome.getTempo() - 1)
-  bpm.value = metronome.getTempo()
-  bpmRange.value = metronome.getTempo()
-  view.update()
+  if (metronome.getTempo() > metronome.minTempo) {
+    metronome.setTempo(metronome.getTempo() - 1)
+    bpm.value = metronome.getTempo()
+    bpmRange.value = metronome.getTempo()
+    view.update()
+  }
 })
 
 minusFive.addEventListener('click', () => {
-  metronome.setTempo(metronome.getTempo() - 5)
+  if (metronome.getTempo() > metronome.minTempo + 5) {
+    metronome.setTempo(metronome.getTempo() - 5)
+  } else {
+    metronome.setTempo(metronome.minTempo)
+  }
   bpm.value = metronome.getTempo()
   bpmRange.value = metronome.getTempo()
   view.update()
