@@ -14,11 +14,14 @@ let view = {
     limit.max = metronome.maxTempo
 
     tempoDisplay.innerText = metronome.tempo
+
+    tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.tempo)
   },
   update() {
     bpm.value = metronome.getTempo()
     bpmRange.value = metronome.getTempo()
     tempoDisplay.innerText = metronome.getTempo()
+    tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.getTempo())
 
     view.clickCount = metronome.clickCount % trainer.period
     if (view.clickCount == 0 && metronome.isActive) {
