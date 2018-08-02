@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  M.AutoInit()
   view.init()  
+  M.AutoInit()
+  view.initTempoMarkingsSelect()
 })

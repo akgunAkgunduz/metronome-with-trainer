@@ -1,7 +1,7 @@
 let metronome =  {
   isActive: false,
   sound: audio,
-  tempo: 100,
+  tempo: 60,
   minTempo: 20,
   maxTempo: 300,
   clickCount: 0,
@@ -20,6 +20,7 @@ let metronome =  {
     this.clickCount = newClickCount
   },
   tick() {
+    let updateSelect = false
     if ((trainer.break > 0) && (trainer.breakCounter < trainer.break) && (this.getClickCount() % trainer.period === 0) && (metronome.getClickCount() > 0) && (this.isActive == true)) {
       trainer.breakCounter++
       trainer.isOnBreak = true
@@ -44,6 +45,7 @@ let metronome =  {
           this.setTempo(trainer.limit)
         } else {
           this.setTempo(this.getTempo() + trainer.increment)
+          updateSelect = true
         }
       }
     } else {
@@ -52,12 +54,14 @@ let metronome =  {
           this.setTempo(trainer.limit)
         } else {
           this.setTempo(this.getTempo() + trainer.increment)
+          updateSelect = true
         }
       }
     }
 
     this.timer = setTimeout(() => {
       console.log(performance.now() - t1)
+      if (updateSelect) view.updateTempoMarkingsSelect()
       this.tick()
     }, 60000 / this.getTempo())
   },

@@ -21,6 +21,7 @@ input[type="number"] {
   width: 40px;
   margin: 0 auto;
 }
+
 #startStop {
   display: block;
 }
@@ -42,4 +43,16 @@ input[type="number"] {
   line-height: 33px;
   height: 36px;
   width: 80px;
+}
+.select-dropdown.dropdown-trigger {
+  text-align: center;
+}
+
+.select-dropdown.dropdown-content span {
+  text-align: center;
+}
+
+#tempoMarkingsDiv2 {
+  width: 240px;
+  margin: auto;
 }
