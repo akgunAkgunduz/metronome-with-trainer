@@ -17,14 +17,11 @@ let view = {
 
     tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.tempo)
 
-    console.log(Object.keys(tempoMarkings.names))
     Object.keys(tempoMarkings.names).forEach(tempoMarking => {
       const newOption = document.createElement('option')
       newOption.value = tempoMarking
       newOption.textContent = tempoMarking
-
-      tempoMarkingsDiv2.querySelector('select').appendChild(newOption)
-      
+      tempoMarkingsSelect.appendChild(newOption)      
     })
   },
   initTempoMarkingsSelect (){
@@ -34,8 +31,7 @@ let view = {
     bpm.value = metronome.getTempo()
     bpmRange.value = metronome.getTempo()
     tempoDisplay.innerText = metronome.getTempo()
-    tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.getTempo())
-    
+    tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.getTempo())    
 
     view.clickCount = metronome.clickCount % trainer.period
     if (view.clickCount == 0 && metronome.isActive) {

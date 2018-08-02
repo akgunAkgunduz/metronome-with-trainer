@@ -1,20 +1,17 @@
 const tempoMarkings = {
   name: function(tempo) {
-    // console.log(this)
     for (name in this.names) {
-      // console.log(name)
       if (tempo >= this.names[name].min && tempo <= this.names[name].max) {
-        // console.log('found:', name)
         return name
       }
     }
   },
   names: {
-    "Larghissimo": { 
-      min: 1,
-      max: 19,
-      desc: "very, very slow" 
-    },
+    // "Larghissimo": { 
+    //   min: 1,
+    //   max: 19,
+    //   desc: "very, very slow" 
+    // },
     "Grave": {
       min: 20,
       max: 39,

@@ -14,7 +14,6 @@ bpm.addEventListener('input', () => {
   metronome.setTempo(parseInt(bpm.value))
   view.update()
   view.updateTempoMarkingsSelect()
-
 })
 
 bpmRange.addEventListener('input', () => {
