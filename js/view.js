@@ -41,7 +41,27 @@ let view = {
     breakCounter.textContent = trainer.breakCounter
   },
   updateTempoMarkingsSelect() {
+    if (metronome.getStatus()) {
+      tempoMarkingsSelect.disabled = true
+    } else {
+      tempoMarkingsSelect.disabled = false
+    }
     tempoMarkingsSelect.querySelector('option[value="' + tempoMarkings.name(metronome.getTempo()) + '"]').selected = true
-    M.FormSelect.init(document.querySelector('#tempoMarkingsSelect'));
+    M.FormSelect.init(document.querySelector('#tempoMarkingsSelect'))
+  },
+  updateStartStop() {
+    if (metronome.getStatus()) {
+      startStop.querySelector('i').innerText = 'stop'
+      startStop.classList.remove('indigo')
+      startStop.classList.remove('darken-4')
+      startStop.classList.add('red')
+      startStop.classList.add('darken-1')
+    } else {
+      startStop.querySelector('i').innerText = 'play_arrow'
+      startStop.classList.remove('red')
+      startStop.classList.remove('darken-1')
+      startStop.classList.add('indigo')
+      startStop.classList.add('darken-4')
+    }
   }
 }

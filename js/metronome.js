@@ -6,6 +6,9 @@ let metronome =  {
   maxTempo: 300,
   clickCount: 0,
   timer: null,
+  getStatus() {
+    return this.isActive
+  },
   getTempo() {
     return this.tempo
   },

@@ -24,21 +24,11 @@ bpmRange.addEventListener('input', () => {
 startStop.addEventListener('click', () => {
   if (!metronome.isActive) {
     metronome.tick()
-    startStop.querySelector('i').innerText = 'stop'
-    startStop.classList.remove('red')
-    startStop.classList.add('grey')
-    startStop.classList.add('darken-2')
-    tempoMarkingsSelect.disabled = true
-    view.updateTempoMarkingsSelect()
   } else {
     metronome.stop()
-    startStop.querySelector('i').innerText = 'play_arrow'
-    startStop.classList.remove('grey')
-    startStop.classList.remove('darken-2')
-    startStop.classList.add('red')
-    tempoMarkingsSelect.disabled = false
-    view.updateTempoMarkingsSelect()
   }
+  view.updateStartStop()
+  view.updateTempoMarkingsSelect()
 })
 
 tempoMarkingsSelect.addEventListener('change', () => {
