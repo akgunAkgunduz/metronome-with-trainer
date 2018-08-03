@@ -1,7 +1,6 @@
 const bpm = document.getElementById('bpm')
 const bpmRange = document.getElementById('bpmRange')
-const start = document.getElementById('start')
-const stop = document.getElementById('stop')
+const startStop = document.getElementById('startStop')
 const clickCounter = document.getElementById('clickCounter')
 const breakCounter = document.getElementById('breakCounter')
 const increment = document.getElementById('increment')
@@ -22,20 +21,24 @@ bpmRange.addEventListener('input', () => {
   view.updateTempoMarkingsSelect()
 })
 
-start.addEventListener('click', () => {
-  metronome.tick()
-  start.classList.toggle('hide')
-  stop.classList.toggle('hide')
-  tempoMarkingsSelect.disabled = true
-  view.updateTempoMarkingsSelect()
-})
-
-stop.addEventListener('click', () => {
-  metronome.stop()
-  start.classList.toggle('hide')
-  stop.classList.toggle('hide')
-  tempoMarkingsSelect.disabled = false
-  view.updateTempoMarkingsSelect()  
+startStop.addEventListener('click', () => {
+  if (!metronome.isActive) {
+    metronome.tick()
+    startStop.querySelector('i').innerText = 'stop'
+    startStop.classList.remove('red')
+    startStop.classList.add('grey')
+    startStop.classList.add('darken-2')
+    tempoMarkingsSelect.disabled = true
+    view.updateTempoMarkingsSelect()
+  } else {
+    metronome.stop()
+    startStop.querySelector('i').innerText = 'play_arrow'
+    startStop.classList.remove('grey')
+    startStop.classList.remove('darken-2')
+    startStop.classList.add('red')
+    tempoMarkingsSelect.disabled = false
+    view.updateTempoMarkingsSelect()
+  }
 })
 
 tempoMarkingsSelect.addEventListener('change', () => {

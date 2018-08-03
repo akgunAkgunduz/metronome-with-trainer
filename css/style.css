@@ -16,14 +16,13 @@ input[type="number"] {
   width: 100%;
 }
 
-#startStopDiv {
+#startStop {
   display: block;
-  width: 40px;
   margin: 0 auto;
 }
 
-#startStop {
-  display: block;
+#startStop i {
+  font-size: 2rem;
 }
 
 #trainer {
