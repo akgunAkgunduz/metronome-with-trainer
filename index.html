@@ -69,15 +69,15 @@
 
       </div>
 
-      <div class="card">
-        <div style="height: 2rem;">
+      <div id="trainerDiv" class="card">
+        <div id="trainerHeader" style="height: 2rem;">
           <div class="left">
             <strong>Trainer</strong>
           </div>
-          <div class="switch right">
+          <div id="trainerSwitch" class="switch right">
             <label>
               Off
-              <input type="checkbox" checked="checked">
+              <input type="checkbox">
               <span class="lever"></span>
               On
             </label>
@@ -93,7 +93,7 @@
         </div>
       </div>    
 
-      <div id="tempDiv" class="card">
+      <div id="tempDiv" class="card" style="display: none">
         <div id="bpmDiv">
           <input id="bpm" type="number">BPM
         </div>

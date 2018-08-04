@@ -74,3 +74,17 @@ input[type="number"] {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+#trainerDiv {
+  height: 4rem;
+  overflow: hidden;
+  transition: 0.3s height;
+}
+
+#trainerHeader {
+  padding: 0 4rem;
+}
+
+#trainer {
+  
+}

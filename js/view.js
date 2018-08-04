@@ -63,5 +63,15 @@ let view = {
       startStop.classList.add('indigo')
       startStop.classList.add('darken-4')
     }
+  },
+  toggleTrainer() {
+    if (trainerSwitch.querySelector('input').checked) {
+      trainerDiv.style.height = '12rem'
+    } else {
+      trainerDiv.style.height = '4rem'
+    }
+  },
+  showTempDiv() {
+    tempDiv.style.display = 'grid'
   }
 }

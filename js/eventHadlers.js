@@ -95,3 +95,7 @@ minusFive.addEventListener('click', () => {
   view.update()
   view.updateTempoMarkingsSelect()
 })
+
+trainerSwitch.addEventListener('change', () => {
+  view.toggleTrainer()  
+})
