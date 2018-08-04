@@ -7,22 +7,36 @@ input[type="number"] {
   padding: 1rem;
 }
 
+.control {
+  width: 56px;
+  height: 56px;
+}
+
+.control-lg {
+  width: 84px;
+  height: 84px;
+}
+
 #bpmDiv {
   text-align: center;
 }
 
 #bpmRangeDiv {
   display: block;
-  width: 100%;
+  margin: auto;
+  width: 90%;
 }
 
 #startStop {
   display: block;
   margin: 0 auto;
+  /* width: 112px;
+  height: 112px; */
 }
 
 #startStop i {
   font-size: 2rem;
+  /* line-height: 112px; */
 }
 
 #trainer {
@@ -38,11 +52,11 @@ input[type="number"] {
 }
 
 #tempoDisplay {
-  display: inline-block;
-  line-height: 33px;
-  height: 36px;
-  width: 80px;
+  width: 112px;
+  height: 112px;
+  font-size: 3rem
 }
+
 .select-dropdown.dropdown-trigger {
   text-align: center;
 }
@@ -54,4 +68,9 @@ input[type="number"] {
 #tempoMarkingsDiv2 {
   width: 240px;
   margin: auto;
+}
+
+#tempDiv {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }

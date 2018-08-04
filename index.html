@@ -26,68 +26,47 @@
         </ul>
       </div>
     </nav>
-
+    
     <ul class="sidenav" id="mobile-nav" style="width: 33.33vw;min-width: 150px">
       <li><a href="#">Settings</a></li>
       <li><a href="#">Help</a></li>
       <li><a href="#">User</a></li>
     </ul>
-
+    
     <div class="container">      
       <div class="card">
-        <div id="bpmDiv">
-          <input id="bpm" type="number">BPM
+        <div class="row" id="controls">
+          <button id="minusFive" class="control btn waves-effect waves-light indigo darken-4">-5</button>
+  
+          <button id="minusOne" class="control control-lg btn waves-effect waves-light indigo darken-4">
+            <i class="material-icons">remove</i>
+          </button>
+  
+          <button id="tempoDisplay" class="control btn waves-effect waves-light red white-text">60</button>
+  
+          <button id="plusOne" class="control control-lg btn waves-effect waves-light indigo darken-4">
+            <i class="material-icons">add</i>
+          </button>
+  
+          <button id="plusFive" class="control btn waves-effect waves-light indigo darken-4">+5</button>
         </div>
-      </div>
-      
-      <div class="card">
+
+        <div class="row" >
+          <div id="tempoMarkingsDiv2" class="input-field">
+            <select id="tempoMarkingsSelect"></select>
+          </div>
+        </div>
+
         <div id="bpmRangeDiv">
           <p class="range-field">
             <input type="range" id="bpmRange" step="1"/>
           </p>
         </div>
-      </div>
 
-      <div class="card center">
-        <div id="tempoMarkingsDiv"></div>
-      </div>
-
-      <div class="card center">
-        <div id="tempoMarkingsDiv2" class="input-field">
-          <select id="tempoMarkingsSelect"></select>
+        <div id="startStopDiv" class="row">
+          <div id="startStop" class="btn-floating btn-large waves-effect waves-light indigo darken-4"><i class="material-icons">play_arrow</i></div>
         </div>
-      </div>
 
-      <div class="card">
-        <div id="controls">
-          <button id="minusFive" class="control btn waves-effect waves-light indigo darken-4">-5</button>
-
-          <button id="minusOne" class="control btn waves-effect waves-light indigo darken-4">
-            <i class="material-icons">remove</i>
-          </button>
-
-          <div id="tempoDisplay" class="z-depth-2 valign-wrapper red white-text">
-            60
-          </div>
-
-          <button id="plusOne" class="control btn waves-effect waves-light indigo darken-4">
-            <i class="material-icons">add</i>
-          </button>
-
-          <button id="plusFive" class="control btn waves-effect waves-light indigo darken-4">+5</button>
-        </div>
-      </div>
-      
-      <div class="card">        
-        <div id="startStop" class="btn-floating btn-large waves-effect waves-light indigo darken-4"><i class="material-icons">play_arrow</i></div>        
-      </div>
-
-      <div class="card">
-        <div id="counters">
-          <span>Clicks: </span><span id="clickCounter">0</span>
-          <br>
-          <span>Break: </span><span id="breakCounter">0</span>
-        </div>
       </div>
 
       <div class="card">
@@ -112,7 +91,19 @@
           <br>
           Give breaks of <input type="number" id="tBreak" value="2" min="0" max="16"> between each period
         </div>
-      </div>      
+      </div>    
+
+      <div id="tempDiv" class="card">
+        <div id="bpmDiv">
+          <input id="bpm" type="number">BPM
+        </div>
+        <div id="tempoMarkingsDiv" class="center"></div>
+        <div id="counters">
+          <span>Clicks: </span><span id="clickCounter">0</span>
+          <br>
+          <span>Break: </span><span id="breakCounter">0</span>
+        </div>
+      </div>         
     </div>
   </div>
 
