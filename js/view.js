@@ -15,16 +15,15 @@ let view = {
 
     tempoDisplay.innerText = metronome.tempo
 
-    tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.tempo)
-
+    tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.tempo)    
+  },
+  initTempoMarkingsSelect (){
     Object.keys(tempoMarkings.names).forEach(tempoMarking => {
       const newOption = document.createElement('option')
       newOption.value = tempoMarking
-      newOption.textContent = tempoMarking
+      newOption.textContent = tempoMarking + ' (' + tempoMarkings.names[tempoMarking].min + ' - ' + tempoMarkings.names[tempoMarking].max + ' BPM)'
       tempoMarkingsSelect.appendChild(newOption)      
     })
-  },
-  initTempoMarkingsSelect (){
     this.updateTempoMarkingsSelect()
   },
   update() {
