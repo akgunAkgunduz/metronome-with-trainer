@@ -30,13 +30,10 @@ input[type="number"] {
 #startStop {
   display: block;
   margin: 0 auto;
-  /* width: 112px;
-  height: 112px; */
 }
 
 #startStop i {
   font-size: 2rem;
-  /* line-height: 112px; */
 }
 
 #trainer {
@@ -83,8 +80,4 @@ input[type="number"] {
 
 #trainerHeader {
   padding: 0 4rem;
-}
-
-#trainer {
-  
 }
