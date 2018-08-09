@@ -13,6 +13,10 @@ let view = {
     limit.min = metronome.minTempo + 1
     limit.max = metronome.maxTempo
 
+    increment.value = trainer.increment
+    period.value = trainer.period
+    tBreak.value = trainer.break
+
     tempoDisplay.innerText = metronome.tempo
 
     tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.tempo)    
