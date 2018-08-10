@@ -81,11 +81,19 @@ input[type="number"] {
 }
 
 #trainerDiv {
-  height: 4rem;
+  height: 12rem;
   overflow: hidden;
   transition: 0.3s height;
 }
 
 #trainerHeader {
   padding: 0 4rem;
+}
+
+/* .switch label input[type=checkbox]:checked+.lever {
+  background-color: white;
+} */
+
+.switch label input[type=checkbox]:checked+.lever:after {
+  background-color:#1A237E;
 }

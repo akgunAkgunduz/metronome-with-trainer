@@ -19,7 +19,9 @@ let view = {
 
     tempoDisplay.innerText = metronome.tempo
 
-    tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.tempo)    
+    tempoMarkingsDiv.innerText = tempoMarkings.name(metronome.tempo)
+
+    trainerSwitch.querySelector('input').checked = true
   },
   initTempoMarkingsSelect (){
     Object.keys(tempoMarkings.names).forEach(tempoMarking => {
