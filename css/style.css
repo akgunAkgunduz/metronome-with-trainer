@@ -45,11 +45,20 @@ input[type="number"] {
 }
 
 #trainer {
-  text-align: center;
+  text-align: left;
 }
 
 #counters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#counters div {
   text-align: center;
+}
+
+#clickCounter, #breakCounter {
+  font-size: 2rem;
 }
 
 #controls {
@@ -81,7 +90,7 @@ input[type="number"] {
 }
 
 #trainerDiv {
-  height: 12rem;
+  height: 14rem;
   overflow: hidden;
   transition: 0.3s height;
 }
@@ -96,4 +105,10 @@ input[type="number"] {
 
 .switch label input[type=checkbox]:checked+.lever:after {
   background-color:#1A237E;
+}
+
+#trainerBody {
+  display: grid;
+  grid-template-columns: 3fr 1fr;  
+  padding: 0 4rem;
 }

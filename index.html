@@ -73,7 +73,7 @@
       </div>
 
       <div id="trainerDiv" class="card">
-        <div id="trainerHeader" style="height: 2rem;">
+        <div id="trainerHeader" class="row" style="height: 2rem;">
           <div id="trainerSwitch" class="switch">
             <label>
               Trainer
@@ -83,12 +83,26 @@
           </div>
         </div>
 
-        <div id="trainer">
-          Increase tempo by <input type="number" id="increment" min="0"> BPM
-          every <input type="number" id="period" min="1"> clicks 
-          until tempo is <input type="number" id="limit"> BPM
-          <br>
-          Give breaks of <input type="number" id="tBreak" min="0" max="16"> between each period
+        <div id="trainerBody" class="row">
+          <div id="trainer">
+            Increase tempo by <input type="number" id="increment" min="0"> BPM
+            every <input type="number" id="period" min="1"> clicks 
+            until tempo is <input type="number" id="limit"> BPM
+            <br>
+            Give breaks of <input type="number" id="tBreak" min="0" max="16"> between each period
+          </div>
+          <div id="counters">
+            <div>
+              <strong>CLICKS</strong>
+              <br>
+              <span id="clickCounter">0</span>
+            </div>
+            <div>
+              <strong>BREAK</strong>
+              <br>
+              <span id="breakCounter">0</span>
+            </div>
+          </div>
         </div>
       </div>    
 
@@ -97,11 +111,6 @@
           <input id="bpm" type="number">BPM
         </div>
         <div id="tempoMarkingsDiv" class="center"></div>
-        <div id="counters">
-          <span>Clicks: </span><span id="clickCounter">0</span>
-          <br>
-          <span>Break: </span><span id="breakCounter">0</span>
-        </div>
       </div>         
     </div>
   </div>

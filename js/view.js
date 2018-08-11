@@ -71,7 +71,7 @@ let view = {
   },
   toggleTrainer() {
     if (trainerSwitch.querySelector('input').checked) {
-      trainerDiv.style.height = '12rem'
+      trainerDiv.style.height = '14rem'
     } else {
       trainerDiv.style.height = '4rem'
     }
