@@ -45,7 +45,7 @@
             <i class="material-icons">remove</i>
           </button>
   
-          <button id="tempoDisplay" class="control btn waves-effect waves-light red white-text">60</button>
+          <button id="tempoDisplay" class="control btn waves-effect waves-light red darken-1 white-text">60</button>
   
           <button id="plusOne" class="control control-lg btn waves-effect waves-light indigo darken-4">
             <i class="material-icons">add</i>
@@ -72,8 +72,8 @@
 
       </div>
 
-      <div id="trainerDiv" class="card">
-        <div id="trainerHeader" class="row" style="height: 2rem;">
+      <div id="trainerDiv" class="card open">
+        <div id="trainerHeader" class="row">
           <div id="trainerSwitch" class="switch">
             <label>
               Trainer
@@ -84,14 +84,13 @@
         </div>
 
         <div id="trainerBody" class="row">
-          <div id="trainer">
+          <div id="trainer" class="row">
             Increase tempo by <input type="number" id="increment" min="0"> BPM
             every <input type="number" id="period" min="1"> clicks 
-            until tempo is <input type="number" id="limit"> BPM
-            <br>
-            Give breaks of <input type="number" id="tBreak" min="0" max="16"> between each period
+            until tempo is <input type="number" id="limit"> BPM and
+            give breaks of <input type="number" id="tBreak" min="0" max="16"> clicks between each period
           </div>
-          <div id="counters">
+          <div id="counters" class="row">
             <div>
               <strong>CLICKS</strong>
               <br>

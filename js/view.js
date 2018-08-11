@@ -9,7 +9,7 @@ let view = {
     bpmRange.min = metronome.minTempo
     bpmRange.max = metronome.maxTempo
 
-    limit.value = metronome.maxTempo
+    limit.value = trainer.limit
     limit.min = metronome.minTempo + 1
     limit.max = metronome.maxTempo
 
@@ -71,9 +71,11 @@ let view = {
   },
   toggleTrainer() {
     if (trainerSwitch.querySelector('input').checked) {
-      trainerDiv.style.height = '14rem'
+      trainerDiv.classList.remove('closed')
+      trainerDiv.classList.add('open')
     } else {
-      trainerDiv.style.height = '4rem'
+      trainerDiv.classList.remove('open')
+      trainerDiv.classList.add('closed')
     }
   },
   showTempDiv() {

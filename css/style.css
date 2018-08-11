@@ -45,12 +45,14 @@ input[type="number"] {
 }
 
 #trainer {
-  text-align: left;
+  text-align: center;
 }
 
 #counters {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  max-width: 400px;
+  margin: auto;
 }
 
 #counters div {
@@ -90,9 +92,16 @@ input[type="number"] {
 }
 
 #trainerDiv {
-  height: 14rem;
   overflow: hidden;
-  transition: 0.3s height;
+  transition: max-height 0.3s ease-out;
+}
+
+#trainerDiv.open {
+  max-height: 32rem;
+}
+
+#trainerDiv.closed {
+  max-height: 4rem;
 }
 
 #trainerHeader {
@@ -108,7 +117,7 @@ input[type="number"] {
 }
 
 #trainerBody {
-  display: grid;
-  grid-template-columns: 3fr 1fr;  
+  /* display: grid;
+  grid-template-columns: 3fr 1fr;   */
   padding: 0 4rem;
 }
