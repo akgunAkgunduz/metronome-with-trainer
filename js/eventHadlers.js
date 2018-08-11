@@ -97,5 +97,6 @@ minusFive.addEventListener('click', () => {
 })
 
 trainerSwitch.addEventListener('change', () => {
+  trainer.toggleStatus()
   view.toggleTrainer()  
 })

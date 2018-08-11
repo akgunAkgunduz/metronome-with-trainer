@@ -24,7 +24,7 @@ let metronome =  {
   },
   tick() {
     let updateSelect = false
-    if ((trainer.break > 0) && (trainer.breakCounter < trainer.break) && (this.getClickCount() % trainer.period === 0) && (metronome.getClickCount() > 0) && (this.isActive == true)) {
+    if ((trainer.getStatus() == true) && (trainer.break > 0) && (trainer.breakCounter < trainer.break) && (this.getClickCount() % trainer.period === 0) && (metronome.getClickCount() > 0) && (this.isActive == true)) {
       trainer.breakCounter++
       trainer.isOnBreak = true
       metronome.setClickCount(metronome.getClickCount() - 1)
@@ -42,25 +42,28 @@ let metronome =  {
     this.setClickCount(this.getClickCount() + 1)
     view.update()
 
-    if (trainer.break == 0) {
-      if ((this.getClickCount() % trainer.period === 0) && (this.getTempo() < trainer.limit) && (trainer.breakCounter == 0)) {
-        if (this.getTempo() + trainer.increment > trainer.limit) {
-          this.setTempo(trainer.limit)
-        } else {
-          this.setTempo(this.getTempo() + trainer.increment)
-          updateSelect = true
+    if (trainer.getStatus() == true) {
+      if (trainer.break == 0) {
+        if ((this.getClickCount() % trainer.period === 0) && (this.getTempo() < trainer.limit) && (trainer.breakCounter == 0)) {
+          if (this.getTempo() + trainer.increment > trainer.limit) {
+            this.setTempo(trainer.limit)
+          } else {
+            this.setTempo(this.getTempo() + trainer.increment)
+            updateSelect = true
+          }
         }
-      }
-    } else {
-      if ((this.getClickCount() % trainer.period === 0) && (this.getTempo() < trainer.limit) && (trainer.breakCounter == trainer.break)) {
-        if (this.getTempo() + trainer.increment > trainer.limit) {
-          this.setTempo(trainer.limit)
-        } else {
-          this.setTempo(this.getTempo() + trainer.increment)
-          updateSelect = true
+      } else {
+        if ((this.getClickCount() % trainer.period === 0) && (this.getTempo() < trainer.limit) && (trainer.breakCounter == trainer.break)) {
+          if (this.getTempo() + trainer.increment > trainer.limit) {
+            this.setTempo(trainer.limit)
+          } else {
+            this.setTempo(this.getTempo() + trainer.increment)
+            updateSelect = true
+          }
         }
       }
     }
+    
 
     this.timer = setTimeout(() => {
       console.log(performance.now() - t1)
