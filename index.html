@@ -45,7 +45,7 @@
             <i class="material-icons">remove</i>
           </button>
   
-          <button id="tempoDisplay" class="control btn waves-effect waves-light red darken-1 white-text">60</button>
+          <button id="tempoDisplay" data-target="tempoModal" class="control btn modal-trigger waves-effect waves-light red darken-1 white-text">60</button>
   
           <button id="plusOne" class="control control-lg btn waves-effect waves-light indigo darken-4">
             <i class="material-icons">add</i>
@@ -110,7 +110,20 @@
           <input id="bpm" type="number">BPM
         </div>
         <div id="tempoMarkingsDiv" class="center"></div>
-      </div>         
+      </div>
+
+    </div>
+
+    <div id="tempoModal" class="modal">
+      <div class="modal-content">
+        <h4>Enter BPM</h4>
+        <p>test...</p>
+        <input type="number" id="tempoInput" value="60">
+      </div>
+      <div class="modal-footer">
+        <button class="btn modal-close red darken-1 waves-effect waves-light">CANCEL</button>
+        <button class="btn modal-close indigo darken-4 waves-effect waves-light">OK</button>
+      </div>
     </div>
   </div>
 
