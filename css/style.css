@@ -121,3 +121,15 @@ input[type="number"] {
   grid-template-columns: 3fr 1fr;   */
   padding: 0 4rem;
 }
+
+#tempoModal {
+  text-align: center;
+  width: 30%;
+}
+#tempoModal input {
+  width: 80px !important;
+  font-size: 2rem;
+}
+#tempoModal .btn {
+  width: 90px;
+}
