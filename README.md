@@ -1,2 +1,2 @@
 # Metronome with Trainer
-A metronome web app with speed trainer.
+A metronome web app with speed trainer. A work in progress...
