@@ -133,3 +133,6 @@ input[type="number"] {
 #tempoModal .btn {
   width: 90px;
 }
+#tempoModal span {
+  font-size: 2rem;
+}
