@@ -21,6 +21,22 @@ bpmRange.addEventListener('input', () => {
   view.updateTempoMarkingsSelect()
 })
 
+tempoDisplay.addEventListener('click', () => {
+  tempoInput.value = metronome.getTempo()
+})
+
+tempoModalApply.addEventListener('click', () => {
+  if (tempoInput.value > metronome.maxTempo) {
+    metronome.setTempo(metronome.maxTempo)
+  } else if (tempoInput.value < metronome.minTempo) {
+    metronome.setTempo(metronome.minTempo)
+  } else {
+    metronome.setTempo(parseInt(tempoInput.value))
+  }
+  view.update()
+  view.updateTempoMarkingsSelect()
+})
+
 startStop.addEventListener('click', () => {
   if (!metronome.isActive) {
     metronome.tick()
