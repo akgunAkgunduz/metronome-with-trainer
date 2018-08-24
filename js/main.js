@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
   M.Modal.init(document.getElementById('tempoModal'), {
     onOpenEnd: function() {
-      tempoInput.focus()
+      tempoInput.select()
+      // tempoInput.focus()
     }
   })
   

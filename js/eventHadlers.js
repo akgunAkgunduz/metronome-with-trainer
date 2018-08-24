@@ -25,6 +25,12 @@ tempoDisplay.addEventListener('click', () => {
   tempoInput.value = metronome.getTempo()
 })
 
+tempoInput.addEventListener('keydown', (e) => {
+  if (e.keyCode == 13) {
+    tempoModalApply.click()
+  }
+})
+
 tempoModalApply.addEventListener('click', () => {
   if (tempoInput.value > metronome.maxTempo) {
     metronome.setTempo(metronome.maxTempo)
