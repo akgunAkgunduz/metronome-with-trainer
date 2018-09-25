@@ -51,12 +51,15 @@ input[type="number"] {
 #counters {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-column-gap: 8px;
   max-width: 400px;
   margin: auto;
 }
 
 #counters div {
   text-align: center;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 #clickCounter, #breakCounter {
