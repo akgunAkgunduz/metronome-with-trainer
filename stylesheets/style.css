@@ -1,0 +1,346 @@
+:root {
+  --color-primary: navy;
+  --color-secondary: white;
+  --color-gray-1: lightgray;
+  --color-gray-2: darkgray;
+  --color-gray-3: darkslategray;
+
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  --shadow-outer: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  --shadow-inner: inset 0 0 12px -8px rgba(0, 0, 0, 0.7);
+
+  --app-width-max: 640px;
+  --app-width-min: 320px;
+
+  --space-primary: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body, button, input {
+  font-family: var(--font-main);
+}
+
+nav {
+  color: var(--color-secondary);
+  background: var(--color-primary);
+  height: 4rem;
+  padding-top: 1rem;
+  margin-bottom: var(--space-primary);
+  box-shadow: var(--shadow-outer);
+}
+
+nav div {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  height: 32px;
+}
+
+nav div span {
+  line-height: 32px;
+  font-size: 1.25rem;
+  padding-left: 6px;
+  font-weight: 500;
+}
+
+button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+label {
+  display: inline-block;
+  width: 5rem;
+}
+
+input[type=number] {
+  width: 3rem
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  height: 2px;
+  background-color: var(--color-primary) ;
+  margin: 0;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-outer);
+}
+
+.container {
+  max-width: var(--app-width-max);
+  min-width: var(--app-width-min);
+  margin: 0 auto;
+  padding: 0 var(--space-primary);
+}
+
+#metronome {
+  display: grid;
+  grid-template-rows: 1fr 36px 20px 80px;
+  margin-bottom: var(--space-primary);
+  padding: 20px var(--space-primary);
+  border-radius: 2px;
+  box-shadow: var(--shadow-outer);
+}
+
+#bpm-and-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 4px;
+  justify-items: center;
+  width: 280px;
+  margin: 0 auto;
+}
+
+.bpm-btn {
+  align-self: center;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  width: 40px;
+  height: 40px;
+  line-height: 30px;
+  font-size: 12px;
+  border-radius: 2px;
+  box-shadow: var(--shadow-outer);
+}
+
+.bpm-btn-large {
+  width: 50px;
+  height: 50px;
+  line-height: 40px;
+}
+
+.bpm-btn-large i {
+  line-height: 40px;
+  font-size: 1rem;
+  font-weight: bold;  
+}
+
+#bpm-container {
+  display: grid;
+  grid-template-rows: 48px 36px;
+  align-self: center;
+  text-align: center;
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+  width: 84px;
+  height: 84px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-outer);
+}
+
+#bpm {
+  padding-top: 20px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 30px;
+  text-align: center;
+}
+
+#bpm + div {
+  font-size: 0.75rem;
+  font-weight: bold;
+  height: 20px;
+}
+
+#tempo-marking {
+  text-align: center;
+  font-style: italic;
+  line-height: 36px;
+  align-self: flex-end;
+}
+
+#bpm-slider-container {
+  line-height: 20px;
+  display: grid;
+}
+
+#bpm-slider {
+  align-self: center;
+  width: 100%;
+}
+
+#play-stop-button {
+  color: var(--color-secondary);
+  background: var(--color-primary);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  padding: 0;
+  align-self: center;
+  justify-self: center;
+  box-shadow: var(--shadow-outer);
+}
+
+#play-stop-icon {
+  line-height: 60px;
+  font-size: 2rem;
+}
+
+#trainer {
+  padding: var(--space-primary);
+  border-radius: 2px;
+  box-shadow: var(--shadow-outer);
+  color: var(--color-gray-3);
+}
+
+#trainer-header {
+  height: 17px;
+  line-height: 17px;
+  margin-bottom: 8px;
+}
+
+#trainer-header span {
+  padding-right: 4px;
+}
+
+#trainer-message {
+  margin-bottom: 8px;
+  font-size: small;
+  font-style: italic;
+  text-align: center;
+}
+
+.btn-trainer {
+  color: var(--color-secondary);
+  background: var(--color-primary);
+  align-self: center;
+  margin: 0 auto;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: var(--shadow-outer);
+}
+
+.btn-trainer i {
+  line-height: 24px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.icon-trainer {
+  height: 30px;
+  width: 24px;
+  line-height: 30px;
+  text-align: center;
+}
+
+#increment-container, #period-container {
+  display: grid;
+  grid-template-columns: 24px 24px 1fr 24px 24px;
+  grid-column-gap: var(--space-primary);
+  height: 30px;
+  margin-bottom: 8px;
+}
+
+#increment, #period {
+  align-self: center;
+  height: 1px;
+}
+
+#increment::-webkit-slider-thumb, #period::-webkit-slider-thumb {
+  width: 15px;
+  height: 15px;
+}
+
+#increment-value, #period-value {
+  line-height: 30px;
+  text-align: right;
+}
+
+#trainer-animation {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-inner);
+}
+
+#trainer-animation-progress {
+  width: 0;
+  height: 20px;
+  background: var(--color-primary);
+  transition: 0.1s;
+}
+
+#trainer-animation-progress-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50px;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 8px;
+  color: var(--color-secondary);
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 17px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 34px;
+  background-color: var(--color-gray-1);
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 2px;
+  bottom: 2px;
+  border-radius: 50%;
+  background-color: var(--color-gray-2);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-primary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 3px var(--color-primary);
+}
+
+input:checked + .slider:before {
+  transform: translateX(13px);
+  background-color: var(--color-secondary);
+}
