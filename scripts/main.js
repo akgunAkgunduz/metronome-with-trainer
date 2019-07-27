@@ -1,0 +1,2 @@
+trainer.setUpSubscriptions()
+view.init()
