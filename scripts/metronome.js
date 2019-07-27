@@ -1,5 +1,5 @@
 const metronome = (() => {
-  const audio = new Audio('../audio/beat.wav')
+  const audio = new Audio('audio/beat.wav')
   const minBpm = 20
   const maxBpm = 220
   let isActive = false
