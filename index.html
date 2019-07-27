@@ -1,139 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  
   <title>Metronome with Trainer</title>
 </head>
-
 <body>
-  <div id="app">
-    <audio id="audio" src="wav/beat.wav"></audio>
-    <nav class="indigo darken-4">
-      <div class="nav-wrapper container">
-        <a href="#" class="brand-logo left">
-          <img src="img/logo.png" alt="app-logo">
-          <span class="hide-on-small-only">Metronome with Trainer</span>
-        </a>
-        <ul class="right">
-          <li>
-            <a href="#">
-              <i class="material-icons tooltipped" data-tooltip="Help">help_outline</i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="material-icons tooltipped" data-tooltip="Settings">settings</i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    
-    <div class="container">      
-      <div class="card">
-        <div class="row" id="controls">
-          <button id="minusFive" class="control btn waves-effect waves-light indigo darken-4">-5</button>
-  
-          <button id="minusOne" class="control control-lg btn waves-effect waves-light indigo darken-4">
+  <nav>
+    <div class="container">
+      <span>Metronome with Trainer</span>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div id="metronome">
+      <div id="bpm-and-buttons">
+        <button id="minus-five" class="bpm-btn">-5</button>
+        <button id="minus-one" class="bpm-btn bpm-btn-large">
             <i class="material-icons">remove</i>
-          </button>
-  
-          <button id="tempoDisplay" data-target="tempoModal" class="control btn modal-trigger waves-effect waves-light red darken-1 white-text">60</button>
-  
-          <button id="plusOne" class="control control-lg btn waves-effect waves-light indigo darken-4">
+        </button>        
+        <div id="bpm-container">
+          <div id="bpm">1</div><div>BPM</div>
+        </div>
+        <button id="plus-one" class="bpm-btn bpm-btn-large">
             <i class="material-icons">add</i>
-          </button>
+        </button>
+        <button id="plus-five" class="bpm-btn">+5</button>
+      </div>
+
+      <div id="tempo-marking"></div>
+
+      <div id="bpm-slider-container">
+        <input type="range" id="bpm-slider">
+      </div>
+      
+      <button id="play-stop-button">
+        <i id="play-stop-icon" class="material-icons">play_arrow</i>
+      </button>
+    </div>
+
+    <div id="trainer">
+      <div id="trainer-header">
+        <span>Trainer</span>
+        <label class="switch">
+          <input type="checkbox" id="trainer-toggle">
+          <span class="slider"></span>
+        </label>
+      </div>
   
-          <button id="plusFive" class="control btn waves-effect waves-light indigo darken-4">+5</button>
-        </div>
-
-        <div class="row" >
-          <div id="tempoMarkingsDiv2" class="input-field">
-            <select id="tempoMarkingsSelect"></select>
-          </div>
-        </div>
-
-        <div id="bpmRangeDiv">
-          <p class="range-field">
-            <input type="range" id="bpmRange" step="1"/>
-          </p>
-        </div>
-
-        <div id="startStopDiv" class="row">
-          <div id="startStop" class="btn-floating btn-large waves-effect waves-light indigo darken-4"><i class="material-icons">play_arrow</i></div>
-        </div>
-
+      <div id="trainer-message">
+        <span>Increase tempo by </span>
+        <span id="increment-display">0</span> 
+        <span id="increment-unit"> BPM</span> 
+        <span> every </span>   
+        <span id="period-display">0</span> 
+        <span id="period-unit"> click</span>
       </div>
-
-      <div id="trainerDiv" class="card open">
-        <div id="trainerHeader" class="row">
-          <div id="trainerSwitch" class="switch">
-            <label>
-              Trainer
-              <input type="checkbox">
-              <span class="lever"></span>
-            </label>
-          </div>
+  
+      <div id="trainer-controls">
+        <div id="increment-container">
+          <i class="material-icons icon-trainer">arrow_upward</i>
+          <button id="increment-minus" class="btn-trainer"><i class="material-icons">remove</i></button>
+          <input type="range" id="increment" min="1" max="40">
+          <button id="increment-plus"class="btn-trainer"><i class="material-icons">add</i></button>
+          <div id="increment-value">0</div>
         </div>
 
-        <div id="trainerBody" class="row">
-          <div id="trainer" class="row">
-            Increase tempo by <input type="number" id="increment" min="0"> BPM
-            every <input type="number" id="period" min="1"> clicks 
-            until tempo is <input type="number" id="limit"> BPM and
-            give breaks of <input type="number" id="tBreak" min="0" max="16"> clicks between each period
-          </div>
-          <div id="counters" class="row">
-            <div class="z-depth-1">
-              <strong>CLICKS</strong>
-              <br>
-              <span id="clickCounter">0</span>
-            </div>
-            <div class="z-depth-1">
-              <strong>BREAK</strong>
-              <br>
-              <span id="breakCounter">0</span>
-            </div>
-          </div>
+        <div id="period-container">
+          <i class="material-icons icon-trainer">sync</i>
+          <button id="period-minus" class="btn-trainer"><i class="material-icons">remove</i></button>
+          <input type="range" id="period" min="1" max="100">
+          <button id="period-plus" class="btn-trainer"><i class="material-icons">add</i></button>
+          <div id="period-value">0</div>
         </div>
-      </div>    
 
-      <div id="tempDiv" class="card" style="display: none">
-        <div id="bpmDiv">
-          <input id="bpm" type="number">BPM
+        <div id="trainer-animation">
+          <div id="trainer-animation-progress"></div>
+          <div id="trainer-animation-progress-number"></div>
         </div>
-        <div id="tempoMarkingsDiv" class="center"></div>
-      </div>
-
-    </div>
-
-    <div id="tempoModal" class="modal .no-autoinit">
-      <div class="modal-content">
-        <h5>Enter new tempo value</h5>
-        <input type="number" id="tempoInput" value="60" min="20" max="300"><span>&nbsp;BPM</span>
-      </div>
-      <div class="modal-footer">
-        <button id="tempoModalCancel" class="btn modal-close red darken-1 waves-effect waves-light">CANCEL</button>
-        <button id="tempoModalApply" class="btn modal-close indigo darken-4 waves-effect waves-light">APPLY</button>
       </div>
     </div>
-  </div>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
-  <script src="js/tempoMarkings.js"></script>
-  <script src="js/metronome.js"></script>
-  <script src="js/trainer.js"></script>
-  <script src="js/view.js"></script>
-  <script src="js/eventHadlers.js"></script>
-  <script src="js/main.js"></script>
 </body>
-
 </html>
