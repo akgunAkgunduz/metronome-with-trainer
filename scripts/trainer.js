@@ -1,7 +1,7 @@
 const trainer = (() => {
-  let isActive = false
-  let period = 4
-  let increment = 1
+  let isActive = localStorage.getItem('trainer-status') === null ? false : JSON.parse(localStorage.getItem('trainer-status'))
+  let period = localStorage.getItem('trainer-period') ? parseInt(localStorage.getItem('trainer-period')) : 20
+  let increment = localStorage.getItem('trainer-increment') ? parseInt(localStorage.getItem('trainer-increment')) : 1
   let totalClicks = 0
 
   const getStatus = () => {
@@ -34,6 +34,8 @@ const trainer = (() => {
 
   const setPeriod = (newPeriod) => {
     period = newPeriod
+
+    pubSub.publish('trainer-period-change')
   }
 
   const getIncrement = () => {
@@ -42,6 +44,8 @@ const trainer = (() => {
 
   const setIncrement = (newIncrement) => {
     increment = newIncrement
+
+    pubSub.publish('trainer-increment-change')
   }
 
   const getTotalClicks = () => {
@@ -54,7 +58,7 @@ const trainer = (() => {
 
   const resetTotalClicks = () => {
     totalClicks = 0
-  }  
+  }
 
   const regulateMetronome = () => {
     if (isActive) {
@@ -64,7 +68,7 @@ const trainer = (() => {
 
       logger.logTotalClicks()
       
-      if (period === 1  && totalClicks > 1) {
+      if (period === 1 && totalClicks > 1) {
         metronome.setTempo(metronome.getTempo() + increment)
       } else {
         if (totalClicks % period === 1 && totalClicks > 1) {

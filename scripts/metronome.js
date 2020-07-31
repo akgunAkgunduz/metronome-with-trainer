@@ -4,7 +4,7 @@ const metronome = (() => {
   const maxBpm = 220
   let isActive = false
   let timer = null
-  let tempo = 120
+  let tempo = localStorage.getItem('bpm') ? parseInt(localStorage.getItem('bpm')) : 120
   let t1 = null
 
   const getStatus = () => {
@@ -56,7 +56,7 @@ const metronome = (() => {
       play()
     }, 60000 / tempo)
   }
-  
+
   const start = () => {
     isActive = true
     play()
