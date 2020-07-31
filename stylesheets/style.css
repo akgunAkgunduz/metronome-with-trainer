@@ -230,12 +230,35 @@ input[type=range]::-webkit-slider-thumb {
   height: 24px;
   border-radius: 50%;
   box-shadow: var(--shadow-outer);
+  transition: background-color 0.1s linear;
+}
+
+.btn-trainer:disabled {
+  background-color: var(--color-gray-2);
+  cursor: not-allowed;
 }
 
 .btn-trainer i {
   line-height: 24px;
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.slider-trainer {
+  transition: background-color 0.1s linear;
+}
+
+.slider-trainer:disabled {
+  background-color: var(--color-gray-1);
+  cursor: not-allowed;
+}
+
+.slider-trainer::-webkit-slider-thumb {
+  transition: background-color 0.1s linear;
+}
+
+.slider-trainer:disabled::-webkit-slider-thumb {
+  background-color: var(--color-gray-2);
 }
 
 .icon-trainer {

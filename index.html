@@ -13,7 +13,7 @@
 </head>
 <body>
   <audio id="click-sound" src="audio/beat.wav"></audio>
-  
+
   <nav>
     <div class="container">
       <img src="images/logo.png" alt="app-logo">
@@ -27,12 +27,12 @@
         <button id="minus-five" class="bpm-btn">-5</button>
         <button id="minus-one" class="bpm-btn bpm-btn-large">
             <i class="material-icons">remove</i>
-        </button>        
+        </button>
         <div id="bpm-container">
           <div id="bpm">1</div><div>BPM</div>
         </div>
         <button id="plus-one" class="bpm-btn bpm-btn-large">
-            <i class="material-icons">add</i>
+          <i class="material-icons">add</i>
         </button>
         <button id="plus-five" class="bpm-btn">+5</button>
       </div>
@@ -56,21 +56,21 @@
           <span class="slider"></span>
         </label>
       </div>
-  
+
       <div id="trainer-message">
         <span>Increase tempo by </span>
-        <span id="increment-display">0</span> 
-        <span id="increment-unit"> BPM</span> 
-        <span> every </span>   
-        <span id="period-display">0</span> 
+        <span id="increment-display">0</span>
+        <span id="increment-unit"> BPM</span>
+        <span> every </span>
+        <span id="period-display">0</span>
         <span id="period-unit"> click</span>
       </div>
-  
+
       <div id="trainer-controls">
         <div id="increment-container">
           <i class="material-icons icon-trainer">arrow_upward</i>
           <button id="increment-minus" class="btn-trainer"><i class="material-icons">remove</i></button>
-          <input type="range" id="increment" min="1" max="40">
+          <input type="range" id="increment" class="slider-trainer" min="1" max="40">
           <button id="increment-plus"class="btn-trainer"><i class="material-icons">add</i></button>
           <div id="increment-value">0</div>
         </div>
@@ -78,7 +78,7 @@
         <div id="period-container">
           <i class="material-icons icon-trainer">sync</i>
           <button id="period-minus" class="btn-trainer"><i class="material-icons">remove</i></button>
-          <input type="range" id="period" min="1" max="100">
+          <input type="range" id="period" class="slider-trainer" min="1" max="100">
           <button id="period-plus" class="btn-trainer"><i class="material-icons">add</i></button>
           <div id="period-value">0</div>
         </div>
@@ -92,7 +92,6 @@
     </div>
   </div>
 
-  
   <script src="scripts/utils.js"></script>
 
   <script src="scripts/pubSub.js"></script>
